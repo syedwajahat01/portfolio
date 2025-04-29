@@ -14,7 +14,7 @@ function Footer() {
         <a href="mailto:swhabdi@gmail.com" target="_blank" rel="noreferrer"><EmailIcon/></a> {/* Replace with your email */}
         <a href="tel:+916391694444" target="_blank" rel="noreferrer"><PhoneIcon/></a> {/* Replace with your phone number */}
       </div>
-      <p>Created by <a href="https://github.com/syedwajahat01/springbootwebapp" target="_blank" rel="noreferrer">Syed Wajahat</a> – code, coffee & creativity ☕️💻</p>
+      <p>Crafted by <a href="https://github.com/syedwajahat01/portfolio" target="_blank" rel="noreferrer">Syed Wajahat</a> – code, coffee & creativity ☕️💻</p>
 
       {/* <p>A portfolio designed & built by <a href="https://github.com/syedwajahat01/springbootwebapp" target="_blank" rel="noreferrer">Syed Wajahat</a> with 💜</p> */}
     </footer>
