@@ -1,17 +1,19 @@
+// src/components/Contact.tsx
 import React, { useRef, useState } from 'react';
 import '../assets/styles/Contact.scss';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
-import TextField from '@mui/material/TextField';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 import emailjs from 'emailjs-com';
 
 // ✏️ Replace these with your real EmailJS IDs:
-const SERVICE_ID = 'your_service_id';
-const TEMPLATE_ID = 'your_template_id';
-const USER_ID = 'your_user_id';
+const SERVICE_ID = 'service_ua11yxc';
+const TEMPLATE_ID = 'template_m3xv4z9';
+const USER_ID = 'lt62C_OmssLIsVa5g';
 
-function Contact() {
+const Contact: React.FC = () => {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
@@ -20,27 +22,30 @@ function Contact() {
   const [emailError, setEmailError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
 
+  const [successOpen, setSuccessOpen] = useState<boolean>(false);
+  const [errorOpen, setErrorOpen] = useState<boolean>(false);
+
   const form = useRef<HTMLFormElement>(null);
 
-  const validateEmail = (email: string): boolean =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validateEmail = (value: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
-    setName(e.target.value);
-    setNameError(e.target.value.trim() === '');
+    const v = e.target.value;
+    setName(v);
+    setNameError(v.trim() === '');
   };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-    setEmailError(!validateEmail(e.target.value));
+    const v = e.target.value;
+    setEmail(v);
+    setEmailError(!validateEmail(v));
   };
 
-  const handleMessageChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setMessage(e.target.value);
-    setMessageError(e.target.value.trim() === '');
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const v = e.target.value;
+    setMessage(v);
+    setMessageError(v.trim() === '');
   };
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -55,25 +60,20 @@ function Contact() {
     setMessageError(!isMessageValid);
 
     if (isNameValid && isEmailValid && isMessageValid) {
-      const templateParams = { name, email, message };
-
       emailjs
-        .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+        .send(
+          SERVICE_ID,
+          TEMPLATE_ID,
+          { name, email, message },
+          USER_ID
+        )
         .then(
-          (response) => {
-            console.log('SUCCESS!', response.status, response.text);
-            alert('Your message has been sent successfully!');
+          () => {
+            setSuccessOpen(true);
+            setName(''); setEmail(''); setMessage('');
           },
-          (error) => {
-            console.error('FAILED...', error);
-            alert('Failed to send your message. Please try again later.');
-          }
+          () => setErrorOpen(true)
         );
-
-      // reset form
-      setName('');
-      setEmail('');
-      setMessage('');
     }
   };
 
@@ -82,16 +82,16 @@ function Contact() {
       <div className="items-container">
         <div className="contact_wrapper">
           <h1>Contact Me</h1>
-          <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
+          <p>Ready to transform your vision into cutting-edge solutions? Let’s innovate together!</p>
+
           <Box
-            ref={form}
             component="form"
+            ref={form}
             noValidate
             autoComplete="off"
             className="contact-form"
             onSubmit={sendEmail}
             sx={{
-              // force input text, labels and outline to be visible
               '& .MuiInputBase-input': { color: '#000' },
               '& .MuiFormLabel-root': { color: '#000' },
               '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
@@ -102,57 +102,98 @@ function Contact() {
               },
             }}
           >
-            <div className="form-flex">
-              <TextField
-                required
-                id="outlined-required-name"
-                label="Your Name"
-                placeholder="What's your name?"
-                value={name}
-                onChange={handleNameChange}
-                error={nameError}
-                helperText={nameError ? 'Please enter your name' : ''}
-                aria-label="Your Name"
-              />
-              <TextField
-                required
-                id="outlined-required-email"
-                label="Email"
-                placeholder="How can I reach you?"
-                value={email}
-                onChange={handleEmailChange}
-                error={emailError}
-                helperText={emailError ? 'Please enter a valid email' : ''}
-                aria-label="Email"
-              />
+            <div className="row g-3">
+              <div className="col-md-6 col-sm-12">
+                <div className="form-floating">
+                  <input
+                    type="text"
+                    className={`form-control ${nameError ? 'is-invalid' : ''}`}
+                    id="floatingName"
+                    placeholder="Your Name"
+                    value={name}
+                    onChange={handleNameChange}
+                  />
+                  <label className='customInput' htmlFor="floatingName">Name</label>
+                  {nameError && <div className="invalid-feedback">Please enter your name</div>}
+                </div>
+              </div>
+
+              <div className="col-md-6 col-sm-12">
+                <div className="form-floating">
+                  <input
+                    type="email"
+                    className={`form-control ${emailError ? 'is-invalid' : ''}`}
+                    id="floatingEmail"
+                    placeholder="Your Email"
+                    value={email}
+                    onChange={handleEmailChange}
+                  />
+                  <label className='customInput' htmlFor="floatingEmail">Email</label>
+                  {emailError && <div className="invalid-feedback">Please enter a valid email</div>}
+                </div>
+              </div>
+
+              <div className="col-12">
+                <div className="form-floating">
+                  <textarea
+                    className={`form-control ${messageError ? 'is-invalid' : ''}`}
+                    id="floatingMessage"
+                    placeholder="Your Message"
+                    style={{ height: '150px' }}
+                    value={message}
+                    onChange={handleMessageChange}
+                  />
+                  <label className='customInput' htmlFor="floatingMessage">Message</label>
+                  {messageError && <div className="invalid-feedback">Please enter your message</div>}
+                </div>
+              </div>
+
+              <div className="col-12 d-flex justify-content-end">
+                <Button
+                  variant="contained"
+                  endIcon={<SendIcon />}
+                  type="submit"
+                  disabled={nameError || emailError || messageError}
+                >
+                  Send
+                </Button>
+              </div>
             </div>
-            <TextField
-              required
-              id="outlined-multiline-static"
-              label="Message"
-              placeholder="Send me any inquiries or questions"
-              multiline
-              rows={10}
-              className="body-form"
-              value={message}
-              onChange={handleMessageChange}
-              error={messageError}
-              helperText={messageError ? 'Please enter the message' : ''}
-              aria-label="Message"
-            />
-            <Button
-              variant="contained"
-              endIcon={<SendIcon />}
-              type="submit"
-              disabled={nameError || emailError || messageError}
-            >
-              Send
-            </Button>
           </Box>
+
+          <Snackbar
+            open={successOpen}
+            autoHideDuration={4000}
+            onClose={() => setSuccessOpen(false)}
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+          >
+            <Alert
+              onClose={() => setSuccessOpen(false)}
+              severity="success"
+              sx={{ width: '100%' }}
+            >
+              Your message has been sent successfully!
+            </Alert>
+          </Snackbar>
+
+          <Snackbar
+            open={errorOpen}
+            autoHideDuration={4000}
+            onClose={() => setErrorOpen(false)}
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+          >
+            <Alert
+              onClose={() => setErrorOpen(false)}
+              severity="error"
+              sx={{ width: '100%' }}
+            >
+              Failed to send your message. Please try again later.
+            </Alert>
+          </Snackbar>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Contact;

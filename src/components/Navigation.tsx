@@ -15,14 +15,15 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
+import { dark } from "@mui/material/styles/createPalette";
 
 const drawerWidth = 240;
-const navItems = [['Home', 'home'], ['Education', 'education'], ['Skills', 'skills'], ['Work Experience', 'workExperience'], 
+const navItems = [['Home', 'home'], ['Education', 'education'], ['Skills', 'skills'], ['Work Experience', 'workExperience'],
 ['Projects', 'projects'], ['Highlights', 'highlights'], ['Contact', 'contact']];
 
-function Navigation({parentToChild, modeChange}: any) {
+function Navigation({ parentToChild, modeChange }: any) {
 
-  const {mode} = parentToChild;
+  const { mode } = parentToChild;
 
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -59,8 +60,12 @@ function Navigation({parentToChild, modeChange}: any) {
   };
 
   const drawer = (
-    <Box className="navigation-bar-responsive" onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <p className="mobile-menu-top"><ListIcon/>Menu</p>
+    <Box
+      className={mode === 'dark' ? 'navigation-bar-responsive-dark' : 'navigation-bar-responsive-light'}
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: 'center' }}
+    >
+      <p className="mobile-menu-top"><ListIcon />Menu</p>
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -73,6 +78,7 @@ function Navigation({parentToChild, modeChange}: any) {
       </List>
     </Box>
   );
+
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -89,9 +95,9 @@ function Navigation({parentToChild, modeChange}: any) {
             <MenuIcon />
           </IconButton>
           {mode === 'dark' ? (
-            <LightModeIcon onClick={() => modeChange()}/>
+            <LightModeIcon onClick={() => modeChange()} />
           ) : (
-            <DarkModeIcon onClick={() => modeChange()}/>
+            <DarkModeIcon onClick={() => modeChange()} />
           )}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
@@ -102,7 +108,8 @@ function Navigation({parentToChild, modeChange}: any) {
           </Box>
         </Toolbar>
       </AppBar>
-      <nav>
+      
+      <nav >
         <Drawer
           variant="temporary"
           open={mobileOpen}
@@ -112,12 +119,13 @@ function Navigation({parentToChild, modeChange}: any) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: mode === 'dark' ? 'black' : 'white' },
           }}
         >
           {drawer}
         </Drawer>
       </nav>
+
     </Box>
   );
 }

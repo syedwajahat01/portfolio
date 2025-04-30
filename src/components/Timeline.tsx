@@ -21,7 +21,14 @@ function Timeline() {
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Senior Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Tata Elxsi | Jio - BP</h4>
+            <h4 className="vertical-timeline-element-subtitle">
+              <a href="https://www.tataelxsi.com/" target="_blank" rel="noopener noreferrer">
+                Tata Elxsi
+              </a> |
+              <a href="https://www.jiobp.com/" target="_blank" rel="noopener noreferrer">
+                Jio - BP
+              </a>
+            </h4>
 
             <ul className="list-disc pl-5 text-gray-700 mt-3 space-y-2">
               <li>Developed a low-code platform allowing API registration via intuitive forms.</li>
@@ -40,7 +47,14 @@ function Timeline() {
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Software Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Criterion Tech | Medvantage (Healthcare Project)</h4>
+            <h4 className="vertical-timeline-element-subtitle">
+              <a href="https://criteriontechnologies.com/" target="_blank" rel="noopener noreferrer">
+                Criterion Tech
+              </a> |
+              <a href="https://medvantage.tech/" target="_blank" rel="noopener noreferrer">
+                Medvantage (Healthcare Project)
+              </a>
+            </h4>
 
             <ul className="list-disc pl-5 text-gray-700 mt-3 space-y-2">
               <li>Contributed to securing ONC certification for Medvantage software, enabling market launch in the USA.</li>
@@ -59,7 +73,14 @@ function Timeline() {
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Assistant System Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Tata Consultancy Services | Dupont</h4>
+            <h4 className="vertical-timeline-element-subtitle">
+              <a href="https://www.tcs.com/" target="_blank" rel="noopener noreferrer">
+                Tata Consultancy Services
+              </a> |
+              <a href="https://www.dupont.com/" target="_blank" rel="noopener noreferrer">
+                Dupont
+              </a>
+            </h4>
             <ul className="list-disc pl-5 text-gray-700">
               <li>Developed RESTful APIs using Java and Spring Boot for seamless backend integration.</li>
               <li>Designed and implemented user stories to build robust and scalable services.</li>
