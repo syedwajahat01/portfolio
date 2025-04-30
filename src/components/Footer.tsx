@@ -9,10 +9,10 @@ function Footer() {
   return (
     <footer>
       <div>
-        <a href="https://github.com/syedwajahat01" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-        <a href="https://www.linkedin.com/in/syed-wajahat-husain-abdi-365259202/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-        <a href="mailto:swhabdi@gmail.com" target="_blank" rel="noreferrer"><EmailIcon/></a> {/* Replace with your email */}
-        <a href="tel:+916391694444" target="_blank" rel="noreferrer"><PhoneIcon/></a> {/* Replace with your phone number */}
+        <a href="tel:+916391694444" target="_blank" rel="noreferrer"><PhoneIcon /></a> {/* Replace with your phone number */}
+        <a href="mailto:swhabdi@gmail.com" target="_blank" rel="noreferrer"><EmailIcon /></a> {/* Replace with your email */}
+        <a href="https://www.linkedin.com/in/syed-wajahat-husain-abdi-365259202/" target="_blank" rel="noreferrer"><LinkedInIcon /></a>
+        <a href="https://github.com/syedwajahat01" target="_blank" rel="noreferrer"><GitHubIcon /></a>
       </div>
       <p>Crafted by <a href="https://github.com/syedwajahat01/portfolio" target="_blank" rel="noreferrer">Syed Wajahat</a> – code, coffee & creativity ☕️💻</p>
 
