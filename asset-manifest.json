@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.753d9c75.css",
-    "main.js": "/portfolio/static/js/main.baeb5842.js",
+    "main.js": "/portfolio/static/js/main.50cab57c.js",
     "static/js/453.9415623e.chunk.js": "/portfolio/static/js/453.9415623e.chunk.js",
     "static/media/bg-light.png": "/portfolio/static/media/bg-light.bac0efb485244a522981.png",
     "static/media/bg-dark.png": "/portfolio/static/media/bg-dark.f420c6b8458af72de935.png",
     "static/media/WajahatDark.png": "/portfolio/static/media/WajahatDark.41f8c4c8cf5643a9fc4e.png",
     "static/media/WajahatLight.png": "/portfolio/static/media/WajahatLight.1ea7248e80cd0465665c.png",
     "static/media/enchantioShop.png": "/portfolio/static/media/enchantioShop.d692f4eb86c81247f9c5.png",
-    "static/media/syed_wajahat.pdf": "/portfolio/static/media/syed_wajahat.c923bd410aa11d5bfd9a.pdf",
+    "static/media/syed_wajahat.pdf": "/portfolio/static/media/syed_wajahat.d6f936276e092835e7e1.pdf",
     "static/media/chatbot.png": "/portfolio/static/media/chatbot.909cde266572a43bc6ca.png",
     "index.html": "/portfolio/index.html",
     "main.753d9c75.css.map": "/portfolio/static/css/main.753d9c75.css.map",
-    "main.baeb5842.js.map": "/portfolio/static/js/main.baeb5842.js.map",
+    "main.50cab57c.js.map": "/portfolio/static/js/main.50cab57c.js.map",
     "453.9415623e.chunk.js.map": "/portfolio/static/js/453.9415623e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.753d9c75.css",
-    "static/js/main.baeb5842.js"
+    "static/js/main.50cab57c.js"
   ]
 }
