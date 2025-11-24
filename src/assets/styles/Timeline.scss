@@ -1,0 +1,49 @@
+.vertical-timeline span {
+    color: white;
+    font-family: 'Courier Prime', monospace;
+}
+
+.vertical-timeline p {
+    color: rgb(39, 40, 34);
+}
+
+.vertical-timeline-element p {
+    color: rgb(39, 40, 34);
+}
+
+.vertical-timeline-element h3 {
+    color: rgb(39, 40, 34);
+}
+
+.vertical-timeline-element h4 {
+    color: rgb(39, 40, 34);
+}
+
+.vertical-timeline-element span {
+    color: rgb(39, 40, 34);
+}
+
+.vertical-timeline-element .vertical-timeline-element-date {
+    color: white;
+}
+
+.svg-inline--fa {
+    color: white;
+}
+
+.vertical-timeline-element-subtitle a {
+    visibility: visible; /* Ensure the links are always visible */
+    opacity: 1;          /* Ensure full opacity */
+    color: inherit;      /* Use the default text color */
+    text-decoration: none; /* Remove underline if not needed */
+  }
+  
+  .vertical-timeline-element-subtitle a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+  }
+
+@media screen and (max-width: 1170px) {
+    .vertical-timeline-element .vertical-timeline-element-date {
+        color: rgb(39, 40, 34);
+    }
+}
