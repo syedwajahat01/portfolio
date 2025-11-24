@@ -21,7 +21,7 @@ const databasesAndTools: string[] = [
 
 const other: string[] = [
   "RESTful APIs", "Kafka", "Git", "Docker", "Microservices", "Maven", "Gradle",
-  "XML", "JSON", "Postman", "Swagger", "GitHub Copilot"
+  "XML", "JSON", "Postman", "Swagger",  "SonarQube", "JPA", "Hibernate", "GitHub Copilot"
 ];
 
 function Skills() {

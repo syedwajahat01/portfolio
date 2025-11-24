@@ -31,12 +31,15 @@ function Timeline() {
             </h4>
 
             <ul className="list-disc pl-5 text-gray-700 mt-3 space-y-2">
-              <li>Developed a low-code platform allowing API registration via intuitive forms.</li>
-              <li>Integrated Kafka for real-time data streaming, with dynamic consumption/production logic and automated scheduling.</li>
-              <li>Built a fund allocation feature using a payment gateway to transfer funds directly to managers' accounts.</li>
-              <li>Implemented trip financing and trip card functionalities for secure, cashless fuel/non-fuel transactions for drivers.</li>
-              <li>Designed and built transaction reporting with consolidated and date-filtered financial insights.</li>
-              <li><strong>Technologies:</strong> Java, Spring Boot, PostgreSQL, Microservices, Kafka, Docker</li>
+              <li>Developed alow-code platform enabling users to register APIs via intuitive forms; integrated Kafka for real-time data streaming,
+                consumption, production, and implemented scheduling for automated API requests with dynamic start/stop controls.</li>
+              <li>Developed a fund allocation feature via the payment gateway, enabling seamless transfers to the manager’s account.</li>
+              <li>Developed and maintained Carrier Management, Contract Management, and Transplanner Management microservices to en
+                hance system scalability, performance, and operational efficiency.</li>
+              <li>Implemented trip financing and trip card functionalities, enabling managers to allocate funds directly to drivers’ trip cards for
+                secure, cashless fuel and non-fuel purchases related to assigned vehicles.</li>
+              <li>Designed and built transaction reporting with consolidated and date-range-based insights for enhanced financial tracking.</li>
+              <li><strong>Technologies:</strong> Java, Spring Boot, PostgreSQL, OracleDB, Microservices, Kafka, Docker, SonarQube, Swagger</li>
             </ul>
           </VerticalTimelineElement>
 
